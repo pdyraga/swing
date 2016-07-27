@@ -6,7 +6,7 @@
     "cards",
     "swipeable"
   ],
-  "version": "3.0.3.forked",
+  "version": "3.0.3",
   "main": "./dist/index.js",
   "author": {
     "name": "Gajus Kuizinas",
