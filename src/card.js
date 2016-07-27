@@ -66,7 +66,8 @@ const Card = (stack, targetElement) => {
             ]
         });
 
-        Card.appendToParent(targetElement);
+        // Do not put the card on the top of stack. Leave this decision to client code.
+        // Card.appendToParent(targetElement);
 
         eventEmitter.on('panstart', () => {
             Card.appendToParent(targetElement);
