@@ -66,19 +66,19 @@ var Card = function Card(stack, targetElement) {
         config = Card.makeConfig(stack.getConfig());
         eventEmitter = (0, _sister2.default)();
         springSystem = stack.getSpringSystem();
-        springThrowIn = springSystem.createSpring(250, 10);
-        springThrowOut = springSystem.createSpring(500, 20);
+        springThrowIn = springSystem.createSpring(20, 30);
+        springThrowOut = springSystem.createSpring(20, 60);
         lastThrow = {};
         lastTranslate = {
             x: 0,
             y: 0
         };
 
-        springThrowIn.setRestSpeedThreshold(0.05);
-        springThrowIn.setRestDisplacementThreshold(0.05);
+        springThrowIn.setRestSpeedThreshold(0.9);
+        springThrowIn.setRestDisplacementThreshold(0.8);
 
-        springThrowOut.setRestSpeedThreshold(0.05);
-        springThrowOut.setRestDisplacementThreshold(0.05);
+        springThrowOut.setRestSpeedThreshold(0.9);
+        springThrowOut.setRestDisplacementThreshold(0.8);
 
         throwOutDistance = config.throwOutDistance(config.minThrowOutDistance, config.maxThrowOutDistance);
 
@@ -272,7 +272,7 @@ var Card = function Card(stack, targetElement) {
                     throwDirection: lastThrow.direction
                 });
             } else if (where === Card.THROW_OUT) {
-                springThrowOut.setCurrentValue(0).setAtRest().setVelocity(100).setEndValue(1);
+                springThrowOut.setCurrentValue(0).setAtRest().setEndValue(1);
 
                 eventEmitter.trigger('throwout', {
                     target: targetElement,
