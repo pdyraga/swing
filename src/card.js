@@ -250,7 +250,7 @@ const Card = (stack, targetElement) => {
                     throwDirection: lastThrow.direction
                 });
             } else if (where === Card.THROW_OUT) {
-                springThrowOut.setCurrentValue(0).setAtRest().setVelocity(100).setEndValue(1);
+                springThrowOut.setCurrentValue(0).setAtRest().setEndValue(1);
 
                 eventEmitter.trigger('throwout', {
                     target: targetElement,
